@@ -19,8 +19,8 @@ public class CubeController : MonoBehaviour
     public Material cubeMaterial;
     private bool alphaPerFrame;
     private float startAlphaTime;
-    public float flickerSpeed = 10f;
-    private float r = 0.6f, g = 0.6f, b = 0.6f;
+    public double flickerSpeed = 0.01;
+    private double r = 0.6, g = 0.6, b = 0.6;
     private int frames;
     
     public Text logText;
@@ -137,7 +137,7 @@ public class CubeController : MonoBehaviour
         r += flickerSpeed;
         g += flickerSpeed;
         b += flickerSpeed;
-        cubeMaterial.color = new Color(r, g, b);
+        cubeMaterial.color = new Color((float)r, (float)g, (float)b);
         Debug.Log("New color: " + cubeMaterial.color);
         everyOther = false;
     }
