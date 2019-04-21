@@ -19,12 +19,12 @@ public class CubeController : MonoBehaviour
     public Material cubeMaterial;
     private bool alphaPerFrame;
     private float startAlphaTime;
-    public float flickerSpeed = 0.00001f;
-    private float r = 0.5f, g = 0.5f, b = 0.5f;
+    public float flickerSpeed = 10f;
+    private float r = 0.6f, g = 0.6f, b = 0.6f;
     private int frames;
     
     public Text logText;
-    private Color presetColor = new Color(0.6f, 0.6f, 0.6f, 1);
+    private readonly Color presetColor = new Color(0.6f, 0.6f, 0.6f, 1);
     private const string CUBE_NAME = "Cube1";
     
     // Use this for initialization
@@ -64,7 +64,7 @@ public class CubeController : MonoBehaviour
         {
             frames++;
             
-            if (frames % 2 == 0) { //If the remainder of the current frame divided by 5 is 0 run the function.
+            if (frames % 10 == 0) { //If the remainder of the current frame divided by 5 is 0 run the function.
                 Frame10Update();
             }
         }
@@ -88,7 +88,6 @@ public class CubeController : MonoBehaviour
             cubePrefab.material.color = presetColor;
             cubePrefab.transform.position =
                 new Vector3(xyList.ElementAt(i).Key, xyList.ElementAt(i).Value, 0);
-            //transform.Rotate(0, 180.0f, 0, Space.Self); //TODO prova med denna 
             i++;
         }
 
@@ -127,7 +126,7 @@ public class CubeController : MonoBehaviour
 
     public void StartFlickering()
     {
-        cubeMaterial = transform.Find("Cube1").GetComponent<Renderer>().material;
+        cubeMaterial = transform.Find(CUBE_NAME).GetComponent<Renderer>().material;
         cubeMaterial.color = presetColor;
         flicker = true;
 
