@@ -387,7 +387,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: .
 --- !u!222 &150369365
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -410,7 +410,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -140.6, y: 450}
-  m_SizeDelta: {x: 180.7, y: 103.4}
+  m_SizeDelta: {x: 180.7, y: 113.97}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &172391804
 Prefab:
@@ -499,7 +499,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4497055787654456, guid: c10877f7cd5764de18d46d7b777d1faa, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.203
+      value: -0.322
       objectReference: {fileID: 0}
     - target: {fileID: 4497055787654456, guid: c10877f7cd5764de18d46d7b777d1faa, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1413,8 +1413,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPersonCamera: {fileID: 224093871}
   cubeMaterial: {fileID: 0}
-  flickerSpeed: 0.0001
   logText: {fileID: 150369364}
+  flickerSpeed: 1
 --- !u!4 &2115572496
 Transform:
   m_ObjectHideFlags: 0

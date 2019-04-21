@@ -19,13 +19,14 @@ public class CubeController : MonoBehaviour
     public Material cubeMaterial;
     private bool alphaPerFrame;
     private float startAlphaTime;
-    public double flickerSpeed = 0.01;
-    private double r = 0.6, g = 0.6, b = 0.6;
+    public Text logText;
     private int frames;
     
-    public Text logText;
-    private readonly Color presetColor = new Color(0.6f, 0.6f, 0.6f, 1);
     private const string CUBE_NAME = "Cube1";
+    
+    public int flickerSpeed = 1;
+    private int r = 100, g = 100, b = 100;
+    private readonly Color presetColor = new Color(100/255.0f, 100/255.0f, 100/255.0f, 1);
     
     // Use this for initialization
     void Start()
@@ -121,7 +122,7 @@ public class CubeController : MonoBehaviour
     public void StopFlickering()
     {
         flicker = false;
-        logText.text = "r: " + r + ", g: " + g + ", b: " + b; 
+        logText.text = "r: " + r.ToString("0000") + ", g: " + g.ToString("0000") + ", b: " + b.ToString("0000"); 
     }
 
     public void StartFlickering()
@@ -137,7 +138,8 @@ public class CubeController : MonoBehaviour
         r += flickerSpeed;
         g += flickerSpeed;
         b += flickerSpeed;
-        cubeMaterial.color = new Color((float)r, (float)g, (float)b);
+        Debug.Log("r:" + r + " g:" + g + " b:" + b);
+        cubeMaterial.color = new Color(r/255.0f, g/255.0f, b/255.0f);
         Debug.Log("New color: " + cubeMaterial.color);
         everyOther = false;
     }
